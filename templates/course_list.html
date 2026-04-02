@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Courses List</title>
+</head>
+<body>
+
+    <div class="container">
+        <a href="/logout" class="logout-link">Logout 🚪</a>
+
+        <h2>Select Your Course 📚</h2>
+        
+        <div class="courses-grid">
+            {% for course in courses %}
+            <div class="course-card">
+                <h3>{{ course.title }}</h3>
+                <p style="color: #666; font-size: 0.9rem;">Master the skills of the future.</p>
+                <a href="/course/{{ course.name }}" class="view-btn">View Details &rarr;</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

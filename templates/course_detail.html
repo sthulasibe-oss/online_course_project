@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ course.title }} - Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" style="max-width: 600px; display: block;">
+        
+        <a href="/courses" style="text-decoration: none; color: #4361ee; font-size: 0.9rem; font-weight: 600;">&larr; Back to List</a>
+
+        <h2 style="margin-top: 20px;">{{ course.title }} 📘</h2>
+
+        <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin: 20px 0; text-align: left; border-left: 5px solid #1a73e8;">
+            <p style="margin-bottom: 10px;"><strong>⏳ Duration:</strong> {{ course.duration }}</p>
+            <p style="margin-bottom: 10px;"><strong>💰 Fees:</strong> {{ course.fees }}</p>
+            <p style="margin-bottom: 10px;"><strong>⏰ Timing:</strong> {{ course.timing }}</p>
+            
+            <p style="margin-top: 20px; font-weight: 600; color: #333;">✨ Key Advantages:</p>
+            <ul style="margin-left: 20px; margin-top: 10px; color: #555; line-height: 1.8;">
+                {% for adv in course.advantages %}
+                <li>{{ adv }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <form method="POST">
+            <button type="submit" style="width: 100%; font-size: 1.1rem;">Reserve Now & Pay</button>
+        </form>
+
+    </div>
+
+</body>
+</html>

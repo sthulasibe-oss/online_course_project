@@ -1,0 +1,195 @@
+/* 1. Global Reset & Fonts */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* 2. Main Container Layout */
+.container {
+    position: relative; 
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-wrap: wrap; /* For Login/Register split layout */
+    overflow: hidden;
+}
+
+/* 3. Login & Register Split Layout (Left/Right) */
+.left {
+    flex: 1;
+    background: linear-gradient(135deg, #4361ee, #3f37c9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+    min-width: 300px;
+}
+
+.right {
+    flex: 1.2;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+}
+
+/* 4. Typography */
+h2 {
+    color: #1a73e8;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+h1 { font-size: 2.2rem; margin-bottom: 10px; }
+
+/* 5. Form Elements (Inputs & Buttons) */
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4361ee;
+    box-shadow: 0 0 5px rgba(67, 97, 238, 0.2);
+}
+
+button {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #1557b0;
+    transform: translateY(-2px);
+}
+
+/* 6. Course Mode Selection (Online/Offline) */
+.mode-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mode-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid #eee;
+    transition: 0.3s;
+}
+
+.mode-card:hover {
+    background: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+/* 7. Course List Grid */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.course-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #4361ee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+/* 8. Links & Navigation */
+.view-btn {
+    display: block;
+    background: #f0f4ff;
+    color: #4361ee;
+    padding: 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.view-btn:hover { background: #4361ee; color: white; }
+
+.logout-link {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #e63946;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border: 1.5px solid #e63946;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.logout-link:hover {
+    background: #e63946;
+    color: white;
+}
+
+/* 9. Responsiveness */
+@media (max-width: 768px) {
+    .container { flex-direction: column; padding: 1.5rem; }
+    .left, .right { padding: 25px; min-width: 100%; }
+    .mode-container { flex-direction: column; }
+    .logout-link { position: static; display: inline-block; margin-bottom: 20px; }
+}

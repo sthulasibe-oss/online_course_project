@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Mode</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container" style="max-width: 800px; display: block;">
+        
+        <a href="/logout" class="logout-link">Logout 🚪</a>
+
+        <h2 style="text-align: center; width: 100%;">Select Course Mode 🎓</h2>
+
+        <div class="mode-container">
+            <div class="mode-card">
+                <h3>Online</h3>
+                <p style="margin-bottom: 20px; color: #666;">Learn from anywhere in the world at your own pace.</p>
+                <a href="/courses/online">
+                    <button>Select</button>
+                </a>
+            </div>
+
+            <div class="mode-card">
+                <h3>Offline</h3>
+                <p style="margin-bottom: 20px; color: #666;">Direct classroom training with expert mentors.</p>
+                <a href="/courses/offline">
+                    <button>Select</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Courses</title>
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Available Courses 🎓</h2>
+
+<div class="course-container">
+
+{% for c in courses %}
+  <div class="card">
+    <h3>{{ c.title }}</h3>
+    <p>Fees: {{ c.fees }}</p>
+
+    <form action="/reserve/{{ c.name }}" method="post">
+        <button type="submit">Reserve</button>
+    </form>
+  </div>
+{% endfor %}
+
+</div>
+
+<a href="/logout" class="logout">Logout</a>
+
+</body>
+</html>

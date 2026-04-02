@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Registration Success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="container" style="max-width: 500px; text-align: center; display: block;">
+        
+        <a href="/logout" class="logout-link">Logout 🚪</a>
+
+        <div style="margin-top: 20px;">
+            <div style="background: #d4edda; color: #28a745; width: 80px; height: 80px; line-height: 80px; border-radius: 50%; margin: 0 auto 20px; font-size: 40px;">
+                ✓
+            </div>
+        </div>
+
+        <h2 style="color: #28a745; text-align: center;">🎉 Success!</h2>
+        
+        <p style="font-size: 1.1rem; color: #555; margin-bottom: 30px;">
+            Course Registered Successfully.<br>
+            We have sent the details to your email.
+        </p>
+
+        <div style="border-top: 1px solid #eee; padding-top: 20px;">
+            <a href="/courses" class="view-btn" style="background: #1a73e8; color: white;">
+                View My Courses
+            </a>
+        </div>
+
+    </div>
+
+</body>
+</html>
